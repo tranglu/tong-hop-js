@@ -31,27 +31,21 @@ document.addEventListener("DOMContentLoaded", function() {
     var layer2 = document.querySelector('.layer2');
     var slides = document.querySelector('.slides');
     var slidewrapper = document.querySelector('.slidewrapper');
-    var button = document.querySelector('.btn');
-    var comment = document.querySelector('.comment');
+    
+   
+    // var slides = document.querySelectorAll('.slide-hien-thi');
     window.ID = 0;
     for (var i = 0; i < images.length; i++) {
         images[i].onclick = function() {
-            //      	for (var k = 0; k <images.length; k++) {
-            // 	nutPhai.classList.remove('active');
-            // 	nutTrai.classList.remove('active');
-            // 	images[k].classList.remove('xuathien');
-            // 	//slide[k].classList.remove('truotphai');
-            // }
-            console.log(this);
             layer2.classList.add('xuat-hien');
-
             window.ID = this.getAttribute('data-id');
-           
             var slideHienThiHienTai = document.getElementById(window.ID);
             slideHienThiHienTai.classList.add('xuat-hien');
             var nutPhai = document.querySelector('.chuyenslide b.phai'),
                 nutTrai = document.querySelector('.chuyenslide b.trai');
-            var slides = document.querySelectorAll('.slide-hien-thi');
+            var slidesHienThi = document.querySelectorAll('.slide-hien-thi');
+             var comment = document.querySelector('.comment');
+             var button = document.querySelector('.btn');
             var trangthai = "dungyen";
 
             function xacDinh2SlideVaChuyenDong(nut) {
@@ -59,13 +53,13 @@ document.addEventListener("DOMContentLoaded", function() {
                 //đang đứng yên thì xử lý chuyển động
                 trangthai = "dangchuyendong";
                 var trangthai2chuyendong = 0;
-                 console.log(window.ID);
-                var slideHienTai = slides[window.ID];
+                console.log(window.ID);
+                var slideHienTai = slidesHienThi[window.ID];
                 console.log(slideHienTai);
                 // tinh phan tu hien tai, gom cụm code, lồng hàm
-                window.ID = (nut == 'nutPhai') ? ((window.ID == (slides.length - 1)) ? 0 : parseInt(window.ID) + 1) : ((window.ID == 0) ? slides.length - 1 : parseInt(window.ID) - 1);
+                window.ID = (nut == 'nutPhai') ? ((window.ID == (slidesHienThi.length - 1)) ? 0 : parseInt(window.ID) + 1) : ((window.ID == 0) ? slidesHienThi.length - 1 : parseInt(window.ID) - 1);
                 console.log(window.ID);
-                var slideTiepTheo = slides[window.ID];
+                var slideTiepTheo = slidesHienThi[window.ID];
                 console.log(slideTiepTheo);
                 // kiểm tra kết thúc chuyển động
                 var xuLyHienTaiKetThucChuyenDong = function() {
@@ -98,19 +92,16 @@ document.addEventListener("DOMContentLoaded", function() {
             //hành động
             nutPhai.addEventListener('click', chuyenSlidePhai);
             nutTrai.addEventListener('click', chuyenSlideTrai);
-
+            function xoa (slidesanh) {
+                layer2.classList.remove('xuat-hien');
+                for (var k = 0; k < slidesanh.length; k++) {
+                    slidesanh[k].classList.remove('xuat-hien');
+                };
+            };
+             // tắt layer2
+            button.onclick = function(){xoa(slidesHienThi);};
+            comment.onclick =function(){xoa(slidesHienThi);};
         }
     }
-
-    //} // hiện layers
-    button.onclick = function() {
-        layer2.classList.remove('xuat-hien');
-
-    } // tắt layer2
-   comment.onclick = function() {
-        layer2.classList.remove('xuat-hien');
-
-    } // tắt layer2
-    //xử lý chuyển động
 
 }, false); // cách 2
