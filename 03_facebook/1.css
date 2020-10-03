@@ -1,0 +1,47 @@
+*{
+margin:0;padding:0;
+}
+.thanhxanh{
+	height: 43px;
+	background: #0062cc;
+	/*position: relative;*/
+}
+
+.khoi {
+	float: right;
+	position: relative;
+	width: 50px;
+}
+.tamgiac{
+	font-size:19px;
+	color: black;
+	/*position: absolute;*/
+	top:10px;
+}
+.list {
+    position: absolute;
+    top: 43px;
+    left: -130px;
+    width: 150px;
+     opacity: 0; 
+}
+.list:after{
+	content: "";
+	position: absolute;
+	top:-20px;
+	border: 10px #ff000008 solid;
+	display: block;
+	border-bottom-color: white;
+	right: 0px;
+}
+.tamgiactrang{
+color: white;
+}
+.xuathien{
+ opacity: 1 !important;
+ animation: len 0.2s forwards;
+}
+@-webkit-keyframes len{
+	from{transform: translateY(100px);opacity: 0;}
+	to{transform: translateX(0px);opacity: 1;}
+}

@@ -1,0 +1,234 @@
+*{
+margin:0;padding:0;
+}
+html,body,.layer1,.layer2,.gallery{
+	width: 100%;
+	height: 100%;
+}
+/*css menu*/
+.thanhxanh{
+	position: fixed;
+	top:0;
+	height: 43px;
+	background: #0062cc;
+	width: 100%;
+	/*position: relative;*/
+}
+
+.khoi {
+	float: right;
+	position: relative;
+	width: 50px;
+}
+.tamgiac{
+	font-size:19px;
+	color: black;
+	/*position: absolute;*/
+	top:10px;
+}
+.list {
+    position: absolute;
+    top: 35px;
+    left: -133px;
+    width: 150px;
+    opacity: 0;
+}
+.list:after{
+	content: "";
+	position: absolute;
+	top:-20px;
+	border: 10px #ff000008 solid;
+	display: block;
+	border-bottom-color: white;
+	right: 0px;
+}
+.tamgiactrang{
+color: white;
+}
+
+.xuathien{
+ opacity: 1 !important;
+ animation: len 0.2s forwards;
+}
+@-webkit-keyframes len{
+	from{transform: translateY(100px);opacity: 0;}
+	to{transform: translateX(0px);opacity: 1;}
+}
+/*hết css menu*/
+/*css nội dung*/
+.layer1{
+	margin-top: 50px;
+	opacity: 1;
+}
+.avatar{
+	height: 70px;
+}
+/*.mot-anh-tren img{
+	width: 100%;
+	height: 50%;
+	overflow: hidden;
+}*/
+.cac-anh-duoi img{
+	width: 32%;
+	height: 50%;
+	overflow: hidden;
+}
+body{
+	position: relative;
+}
+.menu-trai{
+	float: left;
+	width: 25%;
+	height: 100%;
+}
+.noi-dung-chinh{
+	float: left;
+	width: 50%;
+	height: 100%;
+}
+.hinh-slide{
+	cursor: pointer;
+}
+.menu-phai{
+	float: left;
+	width: 25%;
+	height: 100%;
+}
+.menu-trai img{
+	position: fixed;
+	left: 0;
+	height: 100%;
+	width: 23%;
+}
+.menu-phai img{
+	position: fixed;
+	right: 0;
+	height: 100%;
+	width: 20%;
+}
+/*hết css layer 1*/
+.layer2{
+	position: absolute;
+	opacity: 0;
+	z-index: 2;
+	top: 0;
+	left: 0;
+	box-sizing: border-box;
+	border: 1px gray solid;
+	visibility: hidden; /*biến mất hẳn để chọn dc cái hình ở dưới*/
+}
+
+.slidewrapper{
+	float: left;
+	width: 70%;
+	height: 100%;
+	background-color: #000000cc;
+	position: relative;
+	/*opacity: 0;
+	visibility: hidden;*/
+}
+.slides{
+	height: 100%;
+	position: relative;
+	
+	/*opacity: 0;
+	visibility: hidden;*/
+}
+.slidewrapper .slides img{
+	width: 70%;
+	height:90%;
+	 position: absolute;
+	 
+	 top: 50%;
+	 left: 50%;
+	 transform: translateX(-50%) translateY(-50%);
+	 
+
+}
+.chuyenslide {
+    font-size: 72px;
+    color: #ffffff9e;
+    position: absolute;
+    z-index: 1;
+    top: 45%;
+    width: 98%;
+}
+
+b.trai.fa.fa-angle-left {
+    float: left;
+}
+
+b.phai.fa.fa-angle-right {
+    float: right;
+}
+.comment{
+	float: left;
+	width: 30%;
+	height: 100%;
+	position: relative;
+ 	box-sizing: border-box;
+ 	overflow: hidden;
+}
+.comment input{
+	width: 100%;
+	height: 45px;
+}
+.icon{
+	position: relative;
+	top:-40px;
+	left: 60%;
+}
+button.btn.btn-link {
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+.chuyenslide>b:hover {
+    color: black;
+}
+
+.slide-hien-thi{
+	opacity: 0;
+	visibility:hidden; 
+}
+.xuat-hien{
+	opacity: 1;
+	visibility:visible; 
+
+}
+/* hết css nội dung */
+/* css chuyển động */
+.bienMatKhiAnNext{
+	animation: bienmat1 0.1s  forwards;
+}
+@-webkit-keyframes bienmat1{
+	from{transform:opacity: 1;}
+	to{transform:opacity: 0;}
+}
+.hienRaKhiAnNext{
+	animation: hienra1 0.1s  forwards;
+}
+@-webkit-keyframes hienra1{
+	from{transform:opacity: 0;}
+	to{transform:opacity: 1;}
+}
+.bienMatKhiAnPre{
+	animation: bienmat2 0.5s  forwards;
+}
+@-webkit-keyframes bienmat2{
+	from{transform:opacity: 1;}
+	to{transform:opacity: 0;}
+}
+.hienRaKhiAnPre{
+	animation: hienra2 0.5s forwards;
+}
+@-webkit-keyframes hienra2{
+	from{transform:opacity: 0;}
+	to{transform:opacity: 1;}
+}
+@media(max-width:992px){
+ 	.chuyenslide{
+	font-size: 40px;
+	letter-spacing: 5px;
+	color: gray;
+}
